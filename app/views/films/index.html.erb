@@ -1,0 +1,15 @@
+<div class="row">
+  <% @films.each do |film| %>
+    <div class="col-md-3">
+      <%= link_to film do %>
+        <article class="thumbnail">
+          <%= image_tag film.image, class: 'img-responsive' %>
+          <h1><%= film.name %></h1>
+          <span class="label label-primary"><%= film.average_note %></span>
+        </article>
+      <% end %>
+    </div>
+<% end %>
+</div>
+
+<%= link_to 'New Film', new_film_path %>
